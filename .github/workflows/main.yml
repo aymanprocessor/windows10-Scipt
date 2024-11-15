@@ -24,6 +24,12 @@ jobs:
     - name: Download yt-dlp
       run: Invoke-WebRequest https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe -OutFile C:\downloads\yt-dlp.exe
     
+    - name: Download AnyDesk
+      run: Invoke-WebRequest https://download.anydesk.com/AnyDesk.exe -OutFile C:\downloads\AnyDesk.exe
+    
+    - name: Install AnyDesk
+      run: Start-Process -Wait -FilePath C:\downloads\AnyDesk.exe -ArgumentList '/S'
+    
     - name: Auth
       run: C:\downloads\ngrok\ngrok.exe authtoken $Env:NGROK_AUTH_TOKEN
       env:
