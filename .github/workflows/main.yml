@@ -84,7 +84,7 @@ jobs:
       run: Invoke-WebRequest https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe -OutFile C:\downloads\yt-dlp.exe
     
     - name: Download Send Anywhere installer
-      run: Invoke-WebRequest https://send-anywhere.com/download/SendAnywhereSetup.exe -OutFile C:\downloads\SendAnywhereSetup.exe
+      run: Invoke-WebRequest https://update.send-anywhere.com/downloads/SendAnywhereSetup.exe -OutFile C:\downloads\SendAnywhereSetup.exe
 
     - name: Install Send Anywhere silently
       run: Start-Process -FilePath C:\downloads\SendAnywhereSetup.exe -ArgumentList '/S' -Wait -NoNewWindow
